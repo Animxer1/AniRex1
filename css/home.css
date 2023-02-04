@@ -131,12 +131,13 @@ img {
 #autocomplete-results {
 	position: absolute;
 	top: calc(10% + 10px); /* adjust this value as needed */
-	width: 50%;
-	background-color: rgb(16, 15, 19);
+	width: calc(80% - 100px);
+	background-color: #000000aa;
 	border-top: none;
 	z-index: 1;
 	text-align: left;
 	white-space: pre-wrap;
+	border-radius: 20px;
   }  
 
 #autocomplete-results li {
