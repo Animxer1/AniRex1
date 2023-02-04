@@ -1,0 +1,85 @@
+body {
+	background-color: rgb(16, 15, 19) !important;
+	color: white !important;
+	margin: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+#sidebar {
+	float: left;
+	width: 20%;
+}
+
+#synopsis {
+	float: right;
+	width: 80%;
+}
+
+#footerr {
+	text-align: center;
+	justify-content: center;
+	display: flex;
+	align-items: flex-end;
+	width: 100%;
+}
+
+#footerr a:hover {
+	color: white;
+}
+
+#watch svg {
+	vertical-align: middle;
+}
+
+#anilist svg {
+	vertical-align: middle;
+}
+
+#watch {
+	display: inline-block;
+	border-radius: 20px;
+	border: 0px;
+	cursor: pointer;
+	background-color: #ff0051;
+}
+
+#watch a {
+	color: white;
+}
+
+#watch:hover {
+	box-shadow: 0 0 10px #ff0051;
+}
+
+
+#anilist {
+	display: inline-block;
+	border-radius: 20px;
+	border: 0px;
+	cursor: pointer;
+	background-color: #ffffff;
+}
+
+#anilist a {
+	color: rgb(0, 0, 0);
+}
+
+#anilist:hover {
+	box-shadow: 0 0 10px #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+
+	#sidebar,
+	#synopsis {
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+.navbar-class {
+	margin-bottom: 20px;
+}
