@@ -1,12 +1,12 @@
 body {
-	font-family: 'Noto Sans', sans-serif;}
+	font-family: 'Noto Sans', sans-serif;
+}
 
 #sidebar {
 	padding-top: 20px;
 	float: left;
 	width: 20%;
 }
-
 
 #navbar {
 	text-align: center;
