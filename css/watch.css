@@ -87,3 +87,8 @@ body {
 #footerr a:hover {
 	color: white;
 }
+
+a:hover{
+	color: white;
+	font-size: 28px;
+}

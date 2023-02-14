@@ -15,7 +15,7 @@ fetch('https://api.consumet.org/anime/gogoanime/top-airing')
             var shortTitle = title.substring(0, 50);
             if (title.length > 50)
                 shortTitle += "...";
-            animeDiv.innerHTML = `<img height="350" width="250" src="${anime.image}" alt="${anime.title}"> <a href="anime?id=${anime.id}"> <h2>${shortTitle}</h2> </a> `;
+            animeDiv.innerHTML = `<img height="350" width="250" src="${anime.image}" alt="${anime.title}"> <a href="anime?id=${anime.id}"> <h2  class="sTitle">${shortTitle}</h2> </a> `;
             cardDiv.appendChild(animeDiv);
         });
     })
@@ -24,6 +24,28 @@ fetch('https://api.consumet.org/anime/gogoanime/top-airing')
         document.body.appendChild(errorContainer);
     });
 
+
+    fetch('https://api.consumet.org/anime/gogoanime/recent-episodes')
+    .then(response => response.json())
+    .then(data => {
+        var rrcardDiv = document.getElementById("rrcard");
+        data.results.slice(0, 8).forEach(anime => {
+            var rranimeDiv = document.createElement("div");
+            rranimeDiv.style.display = "inline-block";
+            rranimeDiv.style.marginBottom = "20px";
+            rranimeDiv.style.width = "300px";
+            var title = anime.title;
+            var shortTitle = title.substring(0, 30);
+            if (title.length > 50)
+                shortTitle += "...";
+            rranimeDiv.innerHTML = `<img height="350" width="250" src="${anime.image}" alt="${anime.title}"> <a href="watch?id=${anime.id}&ep=${anime.id}-episode-${anime.episodeNumber}&no=${anime.episodeNumber}"> <h2  class="sTitle">${shortTitle} (${anime.episodeNumber}) </h2> </a> `;
+            rrcardDiv.appendChild(rranimeDiv);
+        });
+    })
+    .catch(error => {
+        errorContainer.innerText = "Error loading. Please refresh";
+        document.body.appendChild(errorContainer);
+    });
 
 
 //Code for searching the last query the user made

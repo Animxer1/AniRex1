@@ -222,3 +222,10 @@ button {
 button:hover {
 	background: #7c7c7c7b
 }
+
+.sTitle{
+font-size:28px
+}
+.sTitle:hover{
+	font-size:29px;
+}
