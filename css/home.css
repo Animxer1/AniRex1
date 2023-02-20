@@ -41,11 +41,6 @@ form {
 	align-items: center;
 }
 
-input {
-	flex-grow: 1;
-	margin-left: 10px;
-	width: 250px;
-}
 
 nav {
 	float: right;
@@ -85,7 +80,7 @@ input {
 	border: none !important;
 	outline: none !important;
 	padding: 0.5em 1em !important;
-	border-radius: 24px !important;
+	border-radius: 20px !important;
 	background: #7c7c7c2b;
 	color: white;
 	font-family: inherit !important;
@@ -165,7 +160,7 @@ img {
 	opacity: 0.5;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1210px) {
 	#navbar {
 		display: flex;
 		align-items: center;
@@ -177,7 +172,7 @@ img {
 
 	input {
 		flex-grow: 1;
-		width: 250px;
+		width: 100px;
 	}
 
 	nav,
@@ -187,7 +182,7 @@ img {
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1210px) {
 	.logo {
 		display: flex;
 		align-items: center;

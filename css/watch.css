@@ -22,11 +22,6 @@ body {
 	width: 100%;
 }
 
-#episodew {
-	margin-left: 310px;
-	white-space: pre-wrap;
-}
-
 .iepisode {	
 	display: inline-block;
 	justify-content: center;
@@ -39,6 +34,7 @@ body {
 	text-align: center;
 	line-height: 50px;
 	color: white;
+	border-radius: 20px;
 }
 
 .iepisode a {
@@ -49,18 +45,18 @@ body {
 	border: 2px solid #ff8bb0!important;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1210px) {
 
 	#info,
 	#episodewatch,
 	#episodesw {
 		width: 90%;
-		margin: 0 auto;
-		text-align: center;
+		margin: 0;
+		float: left;
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1210px) {
 	iframe {
 		width: 350px;
 		height: 500px;
@@ -73,7 +69,7 @@ body {
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1210px) {
 	#info {
 		margin-top: 20px;
 	}
@@ -90,5 +86,4 @@ body {
 
 a:hover{
 	color: white;
-	font-size: 28px;
 }

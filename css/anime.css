@@ -50,7 +50,7 @@ body {
 }
 
 #watch:hover {
-	box-shadow: 0 0 10px #ff0051;
+	box-shadow: 0 2px 30px #ff005191;
 }
 
 
@@ -67,19 +67,17 @@ body {
 }
 
 #anilist:hover {
-	box-shadow: 0 0 10px #ffffff;
+	box-shadow: 0 2px 30px #ffffff90;
 }
 
-@media only screen and (max-width: 600px) {
-
+@media only screen and (max-width: 1210px) {
 	#sidebar,
 	#synopsis {
 		width: 90%;
-		margin: 0 auto;
-		text-align: center;
+		margin: 0;
+		float: left;
 	}
 }
-
 .navbar-class {
 	margin-bottom: 20px;
 }
