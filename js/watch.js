@@ -43,7 +43,7 @@ fetch('https://api.consumet.org/anime/gogoanime/info/' + id)
 
                 const episodewatchDiv = document.getElementById('episodewatch');
                 const refererDiv = document.createElement('div');
-                refererDiv.innerHTML = `<h2> Watching <a href="anime?id=${anime.id}"> ${anime.title} </a> Episode ${no}</h2>  <iframe scrolling="no" frameBorder="0" allowfullscreen = "true" height="580" width="1000" src="${data.headers.Referer}" </iframe> <p></p>`
+                refererDiv.innerHTML = `<h2> Watching <a href="anime?id=${anime.id}"> ${anime.title} </a> Episode ${no}</h2>  <iframe scrolling="no" frameBorder="0" allowfullscreen = "true" height="700" width="1200" src="${data.headers.Referer}" </iframe> <p></p>`
 
                 episodewatchDiv.appendChild(refererDiv);
 
@@ -61,8 +61,9 @@ queryInput.addEventListener("input", function() {
     localStorage.setItem("query", this.value);
 });
 
+
 //Code which fetches API and displays autocomplete results
-const autocompleteResults = document.getElementById("autocomplete-results");
+let autocompleteResults = document.getElementById("autocomplete-results");
 
 function debounce(fn, delay) {
     let timeoutId;

@@ -45,8 +45,9 @@ queryInput.addEventListener("input", function() {
     localStorage.setItem("query", this.value);
 });
 
+
 //Code which fetches API and displays autocomplete results
-const autocompleteResults = document.getElementById("autocomplete-results");
+let autocompleteResults = document.getElementById("autocomplete-results");
 
 function debounce(fn, delay) {
     let timeoutId;

@@ -59,7 +59,7 @@ queryInput.addEventListener("input", function() {
 
 
 //Code which fetches API and displays autocomplete results
-const autocompleteResults = document.getElementById("autocomplete-results");
+let autocompleteResults = document.getElementById("autocomplete-results");
 
 function debounce(fn, delay) {
     let timeoutId;
