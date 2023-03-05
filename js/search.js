@@ -88,3 +88,5 @@ document.addEventListener("click", function(event) {
         autocompleteResults.innerHTML = "";
     }
 });
+
+console.log('%c Code: %c search.js ', 'background-color:#0396ff ; border-radius: 5px; color: white;', '');

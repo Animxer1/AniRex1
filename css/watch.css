@@ -87,3 +87,15 @@ body {
 a:hover{
 	color: white;
 }
+
+        iframe {
+            aspect-ratio: 16/9;
+        }
+
+        #episodewatch {
+            aspect-ratio: 16/9 !important;
+        }
+
+		#query{
+			text-transform: capitalize;
+		}

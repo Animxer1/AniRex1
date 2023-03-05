@@ -224,3 +224,7 @@ font-size:28px
 .sTitle:hover{
 	font-size:29px;
 }
+
+#query{
+	text-transform: capitalize;
+}
