@@ -7,7 +7,7 @@ var id = url.searchParams.get("id");
 var no = url.searchParams.get("no");
 
 //Code which fetches API and displays info and other stuff
-fetch('https://api.consumet.org/anime/gogoanime/info/' + id)
+fetch('https://api.consumet.org/anime/enime/info?id=' + id)
     .then(response => response.json())
     .then(data => {
         const anime = data;
@@ -19,38 +19,42 @@ fetch('https://api.consumet.org/anime/gogoanime/info/' + id)
 
     `;
         document.getElementById('info').appendChild(sideDataDiv);
-        document.title =  anime.title + ' ' + 'episode ' + no + '- hanabi';
+        document.title =  anime.title + ' ' + 'Episode ' + no + '- hanabi';
+        fetch('https://api.consumet.org/anime/enime/info?id=' + id)
+        .then(response => response.json())
+        .then(data => {
+          const episodesDiv = document.getElementById("episodesw");
+      
+          let html = "";
+      
+          const sortedEpisodes = data.episodes.sort((a, b) => a.number - b.number);
+      
+          sortedEpisodes.forEach(episode => {
+            html += `<a href="watch?id=${id}&ep=${episode.id}&no=${episode.number}"> <text class="iepisode"> ${episode.number} </a> </text>`;
+          });
+      
+          episodesDiv.innerHTML = `<h2>Episodes (${sortedEpisodes.length})</h2>` + html;
+        });
+      
 
-        fetch('https://api.consumet.org/anime/gogoanime/info/' + id)
-            .then(response => response.json())
-            .then(data => {
-                const episodesDiv = document.getElementById("episodesw");
-
-                let html = " ";
-
-                data.episodes.forEach(episode => {
-                    html += `<a href="watch?id=${id}&ep=${episode.id}&no=${episode.number}"> <text class="iepisode"> ${episode.number} </a> </text>`;
-
-                });
-
-                episodesDiv.innerHTML = `<h2>Episodes (${anime.episodes.length})</h2>` + html;
-            });
-
-
-        fetch('https://api.consumet.org/anime/gogoanime/watch/' + ep)
-            .then(response => response.json())
-            .then(data => {
-
-                const episodewatchDiv = document.getElementById('episodewatch');
-                const refererDiv = document.createElement('div');
-                refererDiv.innerHTML = `<h2> Watching <a href="anime?id=${anime.id}"> ${anime.title} </a> Episode ${no}</h2>  <iframe scrolling="no" frameBorder="0" allowfullscreen = "true" height="700" width="1200" src="${data.headers.Referer}" </iframe> <p></p>`
-
-                episodewatchDiv.appendChild(refererDiv);
-
-
-            });
+        fetch('https://api.consumet.org/anime/enime/watch?episodeId=' + ep)
+        .then(response => response.json())
+        .then(data => {
+          const episodewatchDiv = document.getElementById('episodewatch');
+          const refererDiv = document.createElement('div');
+          const f = parseInt(no);
+          const currentEpisodeNumber = f;
+          const currentEpisode = anime.episodes.find(episode => episode.number === currentEpisodeNumber);
+          const { id: epId, title } = currentEpisode;
+          const titleHtml = title ? ` ${title}` : '';
+          refererDiv.innerHTML = `<h2> Watching <a href="anime?id=${anime.id}"> ${anime.title} </a> Episode ${currentEpisodeNumber}${titleHtml}</h2>  <iframe scrolling="no" frameBorder="0" allowfullscreen = "true" height="700" width="1200" src="${data.headers.Referer}" </iframe> <p></p>`
+          console.log(`f = ${f}, anime.episodes.length = ${anime.episodes.length}`);
+          episodewatchDiv.appendChild(refererDiv);
+        });
+      
 
     });
+
 
 //Code for searching the last query the user made
 const queryInput = document.getElementById("query");
@@ -83,7 +87,7 @@ const debouncedInput = debounce(function(event) {
 
     const query = document.querySelector("#query").value;
 
-    fetch('https://api.consumet.org/anime/gogoanime/' + query)
+    fetch('https://api.consumet.org/anime/enime/' + query)
         .then(response => response.json())
         .then(data => {
             data.results.slice(0, 4).forEach(result => {
