@@ -118,20 +118,20 @@ body {
     top: 21rem;
 	left: 3rem;
     box-shadow: 0 0 5rem #000;
+}
+	#synopsis{
+		position: relative;
+		left: 2rem;	
+		top: -8rem;
+	}
 	
-}
-
-#synopsis{
-	position: relative;
-	left: 2rem;	
-	top: -8rem;
-}
-}
-
-#afterbanner{
-	margin-bottom: 150px;
-}
-#footerr {
-	margin-top: -100px;
+	
+	#afterbanner{
+		margin-bottom: 150px;
+	}
+	#footerr {
+		margin-top: -100px;
+	}
+	
 }
   
