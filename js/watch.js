@@ -47,7 +47,7 @@ fetch('https://api.consumet.org/anime/enime/info?id=' + id)
           const currentEpisode = anime.episodes.find(episode => episode.number === currentEpisodeNumber);
           const { id: epId, title } = currentEpisode;
           const titleHtml = title ? ` ${title}` : '';
-          refererDiv.innerHTML = `<h2> Watching <a href="anime?id=${anime.id}"> ${anime.title} </a> Episode ${currentEpisodeNumber}${titleHtml}</h2>  <iframe scrolling="no" frameBorder="0" allowfullscreen = "true" height="700" width="1200" src="${data.headers.Referer}" </iframe> <p></p>`
+          refererDiv.innerHTML = `<h2> <a href="anime?id=${anime.id}"> ${anime.title} </a> Episode ${currentEpisodeNumber} : ${titleHtml}</h2>  <iframe scrolling="no" frameBorder="0" allowfullscreen = "true" height="700" width="1200" src="${data.headers.Referer}" </iframe> <p></p>`
           console.log(`f = ${f}, anime.episodes.length = ${anime.episodes.length}`);
           episodewatchDiv.appendChild(refererDiv);
         });
