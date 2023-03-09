@@ -25,7 +25,7 @@ fetch('https://api.consumet.org/anime/enime/' + query)
             animeDiv.style.display = "inline-block";
             animeDiv.style.marginBottom = "20px";
             animeDiv.style.width = "300px";
-            animeDiv.innerHTML = `<img height="350" width="250" src="${anime.image}" alt="${anime.title}"> <a href="anime?id=${anime.id}"  </a> <h2 class="sTitle">${anime.title}</h2>`;
+            animeDiv.innerHTML = `<a href="anime?id=${anime.id}"  </a> <img class="searchimg" height="350" width="250" src="${anime.image}" alt="${anime.title}"> <h2 class="sTitle">${anime.title}</h2> `;
             cardDiv.appendChild(animeDiv);
         }
     })

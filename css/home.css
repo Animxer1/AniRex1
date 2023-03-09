@@ -81,11 +81,12 @@ input {
 	border: none !important;
 	outline: none !important;
 	padding: 0.5em 1em !important;
-	border-radius: 20px !important;
+	border-radius: 1rem!important;
 	background: #7c7c7c2b;
 	color: white;
 	font-family: inherit !important;
 	font-size: 120% !important;
+	font-weight: bold;
 }
 
 a:link {
@@ -103,7 +104,7 @@ a:visited {
 }
 
 img {
-	border-radius: 20px;
+	border-radius: 0.600rem;
 }
 
 ::-webkit-scrollbar {
@@ -219,13 +220,14 @@ button:hover {
 	background: #7c7c7c7b
 }
 
-.sTitle{
-font-size:28px
-}
-.sTitle:hover{
-	font-size:29px;
-}
 
 #query{
 	text-transform: capitalize;
 }
+
+#searchimg{
+	aspect-ratio: 16/9;
+	background-position: 50%;
+	background-size: cover;
+	width: 20rem;
+	border-radius: 1rem}
