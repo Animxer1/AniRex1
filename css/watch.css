@@ -42,8 +42,9 @@ body {
 }
 
 .iepisode:hover{
-	border: 2px solid #ff8bb0!important;
+	border: 2px solid #FF5DAE!important;
 }
+
 
 @media only screen and (max-width: 1210px) {
 
