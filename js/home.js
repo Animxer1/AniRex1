@@ -4,12 +4,13 @@ errorContainer.style.color = "red";
 
 //Code for searching the last query the user made
 const queryInput = document.getElementById("query");
-if (localStorage.getItem("query")) {
-    queryInput.value = localStorage.getItem("query");
+if (sessionStorage.getItem("query")) {
+    queryInput.value = sessionStorage.getItem("query");
 }
 queryInput.addEventListener("input", function() {
-    localStorage.setItem("query", this.value);
+    sessionStorage.setItem("query", this.value);
 });
+
 
 const recentEpisodesUrl = 'https://api.consumet.org/anime/gogoanime/top-airing';
 const enimeBaseUrl = 'https://api.consumet.org/anime/enime/';
