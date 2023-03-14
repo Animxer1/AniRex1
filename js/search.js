@@ -65,7 +65,7 @@ const debouncedInput = debounce(function(event) {
 
     const query = document.querySelector("#query").value;
 
-    fetch('https://api.consumet.org/anime/gogoanime/' + query)
+    fetch('https://api.consumet.org/anime/enime/' + query)
         .then(response => response.json())
         .then(data => {
             data.results.slice(0, 4).forEach(result => {
@@ -89,4 +89,4 @@ document.addEventListener("click", function(event) {
     }
 });
 
-console.log('%c Code: %c search.js ', 'background-color:#0396ff ; border-radius: 5px; color: white;', '');
+console.log('%c Code: %c home.js ', 'background-color:#0396ff ; border-radius: 5px; color: white;', '');
